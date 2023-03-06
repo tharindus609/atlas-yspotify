@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  server:
+    container_name: yspotify_server
+    image: yooooomi/your_spotify_server
+    restart: unless-stopped
+    ports:
+      - 7000:8080
+    environment:
+      - API_ENDPOINT=http://olympus:7000
+      - CLIENT_ENDPOINT=http://olympus:7001
+      - SPOTIFY_PUBLIC=$SPOTIFY_PUBLIC
+      - SPOTIFY_SECRET=$SPOTIFY_SECRET
+  
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+  
+  client:
+    container_name: yspotify_client
+    image: yooooomi/your_spotify_client
+    restart: unless-stopped
+    ports:
+      - 7001:3000
+    environment:
+      - API_ENDPOINT=http://olympus:7000
+
+volumes:
+  mongo_data:
