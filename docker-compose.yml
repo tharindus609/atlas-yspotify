@@ -19,6 +19,7 @@ services:
     restart: unless-stopped
     volumes:
       - mongo_data:/data/db
+      - mongo_configdb:/data/configdb
   
   client:
     container_name: yspotify_client
