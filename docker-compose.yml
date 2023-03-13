@@ -9,7 +9,7 @@ services:
       - 7000:8080
     environment:
       - API_ENDPOINT=http://olympus:7000
-      - CLIENT_ENDPOINT=http://olympus:7001
+      - CLIENT_ENDPOINT=http://yspotify.bi-frost.xyz
       - SPOTIFY_PUBLIC=$SPOTIFY_PUBLIC
       - SPOTIFY_SECRET=$SPOTIFY_SECRET
   
@@ -28,7 +28,7 @@ services:
     ports:
       - 7001:3000
     environment:
-      - API_ENDPOINT=http://olympus:7000
+      - API_ENDPOINT=https://olympus:7000
 
 volumes:
   mongo_data:
