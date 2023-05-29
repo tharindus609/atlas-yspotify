@@ -8,8 +8,8 @@ services:
     ports:
       - 7000:8080
     environment:
-      - API_ENDPOINT=https://yspotify.bi-frost.xyz/api
-      - CLIENT_ENDPOINT=https://yspotify.bi-frost.xyz
+      - API_ENDPOINT=https://yspotify.tharindur.dev/api
+      - CLIENT_ENDPOINT=https://yspotify.tharindur.dev
       - SPOTIFY_PUBLIC=$SPOTIFY_PUBLIC
       - SPOTIFY_SECRET=$SPOTIFY_SECRET
   
@@ -28,7 +28,7 @@ services:
     ports:
       - 7001:3000
     environment:
-      - API_ENDPOINT=https://yspotify.bi-frost.xyz/api
+      - API_ENDPOINT=https://yspotify.tharindur.dev/api
 
 volumes:
   mongo_data:
